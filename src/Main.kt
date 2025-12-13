@@ -32,6 +32,28 @@ class Person3(fName: String, personAge: Int){
 
 }
 
+//secondary constructor
+class Car{
+    var name: String = "null";
+    var age: Int = 0;
+
+    constructor(){
+        println("Create Car")
+    }
+
+    constructor(name: String){
+        println("Constructor with single parameter")
+        this.name= name;
+    }
+
+    constructor(name:String, age: Int){
+        this.name = name;
+        this.age = age;
+        println("Constructor with two parameter");
+    }
+
+}
+
 fun main(){
     var person = Person()
 //    person.setName("Ankit");
@@ -41,6 +63,9 @@ fun main(){
 //    println(person2.canVote());
 
     var person3 = Person3("ankit", 21);
+
+    var car = Car("Jaguar",200000)
+
 
 
 }
