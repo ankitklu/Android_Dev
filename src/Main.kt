@@ -66,9 +66,16 @@ fun main(){
 
     var car = Car("Jaguar",200000)
 
-
-
 }
+
+class Profession{
+    lateinit var name: String
+
+    constructor(){
+        name = "Software Engineer"
+    }
+}
+
 fun test(){
     println("Hello Test ")
 }
