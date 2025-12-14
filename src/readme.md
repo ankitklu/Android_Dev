@@ -83,4 +83,49 @@ class Footballer (age: Int, name:String, club: String) : Person(age, name){
 }
 ```
 
+# Visibility Modifiers inside classes and interfaces
 
+public => visible to any client who can see the declaring class
+private => vosoble inside the class only
+protected => visible inside the class and its subclasses
+internal => visible to any client inside the module that can see the declaring class
+
+Note: If you override a protected member in the derived class without specifying its visibility , its visibility will also be protected.
+
+
+# Conditional Statements
+
+```java
+// if else ladder
+if(){}
+else{}
+
+//else if ladder
+if(){}
+else if(){}
+else{}
+
+//switch conditional
+when(number){
+    case1 -> println()
+    case
+}
+```
+
+# Loops
+```java
+while(condition){
+    //do something and upate
+}
+
+for(i in 1..5){
+    
+        }
+
+//for each
+var text = "Ankit"
+for(letter in text){
+    
+}
+
+```

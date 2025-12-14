@@ -54,21 +54,7 @@ class Car{
 
 }
 
-fun main(){
-//    var person = Person()
-//    person.setName("Ankit");
-//    println(person.getName());
-//
-//    var person2 = Person2("Ankit", 18);
-//    println(person2.canVote());
 
-    var person3 = Person3("ankit", 21);
-
-    var car = Car("Jaguar",200000)
-
-    val f1= Footballer(21, "Ankit", "The DMJ Club");
-
-}
 
 class Profession{
     lateinit var name: String
@@ -131,4 +117,44 @@ class AuthLog: Log{
     constructor(_data: String, _numberOfData: Int): super(_data, _numberOfData){
 
     }
+}
+
+fun main(){
+//    var person = Person()
+//    person.setName("Ankit");
+//    println(person.getName());
+//
+//    var person2 = Person2("Ankit", 18);
+//    println(person2.canVote());
+
+    var person3 = Person3("ankit", 21);
+
+    var car = Car("Jaguar",200000)
+
+    val f1= Footballer(21, "Ankit", "The DMJ Club");
+
+
+    //switch statement
+    var number = 32
+    when(number){
+        32 -> println(number+2)
+        31 -> println(number-2)
+        30 -> println(number)
+        else -> println(number*2)
+    }
+
+    //froward looping
+    for(i in 1..10 step 2){
+        println(i)
+    }
+
+    //back looping
+    for (i in 10 downTo 1) {
+        println(i)
+    }
+
+    for(i in 10 downTo 1 step 1){
+        print("$i ");
+    }
+
 }
