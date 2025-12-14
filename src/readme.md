@@ -65,4 +65,22 @@ var name: String;   //this will throw an error
 this throws an error which says to initilize a value. But if we want to keep it null and may initilize late rin the code
 we use the "lateinit" keyword which allow us to initialize the value later in the code.
 
+# Inheritance
+If the class has a primary constructor , the base must be initialized using the paramaeters of the primary constructor. in the above program , both derived classes gave two parameters age and naem, and both these parameters are initialized in primary constructor in the base clasee.
+
+```java
+
+open class Person(age: Int, name: String){
+    
+}
+class Footballer (age: Int, name:String, club: String) : Person(age, name){
+    init{
+        println("Footballer player $name of age $age and plays for $club")
+    }
+    fun playFootball(){
+        println("I am playing football")
+    }
+}
+```
+
 

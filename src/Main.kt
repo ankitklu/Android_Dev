@@ -1,13 +1,13 @@
-class Person{
-    private var name: String = "Arpit"
-
-    fun getName(): String{
-        return name;
-    }
-    fun setName(name: String){
-        this.name= name;
-    }
-}
+//class Person{
+//    private var name: String = "Arpit"
+//
+//    fun getName(): String{
+//        return name;
+//    }
+//    fun setName(name: String){
+//        this.name= name;
+//    }
+//}
 
 // class with parameters
 class Person2(var name: String, var age:Int){
@@ -55,7 +55,7 @@ class Car{
 }
 
 fun main(){
-    var person = Person()
+//    var person = Person()
 //    person.setName("Ankit");
 //    println(person.getName());
 //
@@ -65,6 +65,8 @@ fun main(){
     var person3 = Person3("ankit", 21);
 
     var car = Car("Jaguar",200000)
+
+    val f1= Footballer(21, "Ankit", "The DMJ Club");
 
 }
 
@@ -76,6 +78,57 @@ class Profession{
     }
 }
 
+//inheritance
+open class Employee(name: String, dept: String){
+    // codes
+}
+
+class Ankit( name: String, age: Int, dept: String): Employee(name, dept){
+    init{
+        println("Employee init")
+        println("Employee name is $name and age is $age")
+    }
+    fun playFootball(){
+
+    }
+}
+
+
+
 fun test(){
     println("Hello Test ")
+}
+
+open class Person(age: Int, name: String){
+
+}
+class Footballer (age: Int, name:String, club: String) : Person(age, name){
+    init{
+        println("Footballer player $name of age $age and plays for $club")
+    }
+    fun playFootball(){
+        println("I am playing football")
+    }
+}
+
+open class Log{
+    var data: String = ""
+    var numberOfData = 0
+    constructor(_data: String){
+
+    }
+    constructor(_data: String, _numberOfData: Int){
+        data = _data
+        numberOfData = _numberOfData
+        println("Data is $data")
+    }
+}
+
+class AuthLog: Log{
+    constructor(_data: String): this("From AuthLog -> + $_data", 10){
+
+    }
+    constructor(_data: String, _numberOfData: Int): super(_data, _numberOfData){
+
+    }
 }
