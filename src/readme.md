@@ -85,10 +85,10 @@ class Footballer (age: Int, name:String, club: String) : Person(age, name){
 
 # Visibility Modifiers inside classes and interfaces
 
-public => visible to any client who can see the declaring class
-private => vosoble inside the class only
-protected => visible inside the class and its subclasses
-internal => visible to any client inside the module that can see the declaring class
+- public => visible to any client who can see the declaring class
+- private => vosoble inside the class only
+- protected => visible inside the class and its subclasses
+- internal => visible to any client inside the module that can see the declaring class
 
 Note: If you override a protected member in the derived class without specifying its visibility , its visibility will also be protected.
 
@@ -120,7 +120,15 @@ while(condition){
 
 for(i in 1..5){
     
+}
+//back looping
+        for (i in 10 downTo 1) {
+            println(i)
         }
+
+            for(i in 10 downTo 1 step 1){
+                print("$i ");
+            }
 
 //for each
 var text = "Ankit"
@@ -129,3 +137,18 @@ for(letter in text){
 }
 
 ```
+
+# Function
+```java
+fun name(par1: Int, par2:Int): Int{
+    
+}
+```
+
+# Arrays
+
+```java
+var arr = arrayOf("One","Two","Three")
+```
+
+

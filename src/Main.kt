@@ -135,26 +135,47 @@ fun main(){
 
 
     //switch statement
-    var number = 32
-    when(number){
-        32 -> println(number+2)
-        31 -> println(number-2)
-        30 -> println(number)
-        else -> println(number*2)
+//    var number = 32
+//    when(number){
+//        32 -> println(number+2)
+//        31 -> println(number-2)
+//        30 -> println(number)
+//        else -> println(number*2)
+//    }
+//
+//    //froward looping
+//    for(i in 1..10 step 2){
+//        println(i)
+//    }
+//
+//    //back looping
+//    for (i in 10 downTo 1) {
+//        println(i)
+//    }
+//
+//    for(i in 10 downTo 1 step 1){
+//        print("$i ");
+//    }
+//    println()
+
+    print("${sum(2,3)}")
+    println()
+
+    var arr = arrayOf(1,2,3,4,5)
+    for(ele in arr){
+        println("$ele ");
+    }
+    println();
+
+    arr.set(2,99)
+    arr[0]=-1
+    for(ele in arr){
+        println("$ele ");
     }
 
-    //froward looping
-    for(i in 1..10 step 2){
-        println(i)
-    }
-
-    //back looping
-    for (i in 10 downTo 1) {
-        println(i)
-    }
-
-    for(i in 10 downTo 1 step 1){
-        print("$i ");
+    for(i in 0..arr.size-1 step 1){
+        println("${arr[i]}");
     }
 
 }
+fun sum(a: Int, b:Int) = a+b
