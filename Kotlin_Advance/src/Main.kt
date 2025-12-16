@@ -17,13 +17,31 @@ fun main(){
 
     println(person3);
 
-    Child.log("Ankit")
-    Child.log("AKM")
+//    Child.log("Ankit")
+//    Child.log("AKM")
+//
+//
+//    Loading.log("Ankit Kumar Mishra")
+//    println(Loading.log("2200032823"))
+//    println(Loading.log("21"))
 
+    val res = HttpStatus.BAD_REQUEST;
+    println(res)
+    println(res.responseLog())
 
-    Loading.log("Ankit Kumar Mishra")
-    println(Loading.log("2200032823"))
-    println(Loading.log("21"))
+    HttpStatus.entries.forEach {
+        println(it.name)
+    }
+
+    val states: List<Result> = listOf(
+        Result.success,
+        Result.Failure(404,"Error in storing user data"),
+        Result.Error("Network error")
+    )
+
+    for (state in states) {
+        println(state)
+    }
 
 }
 
@@ -53,5 +71,32 @@ data object Loading{
     }
     fun age(age: Int){
         println("AGE: $age");
+    }
+}
+
+enum class HttpStatus(val code: Int, val msg:String){
+    ERROR(404, "Server error"),
+    OK(200,"OK"),
+    BAD_REQUEST(400, "Bad request"),
+    InternalServerError(500, "Internal server error");
+
+    fun responseLog() : String{
+        return "$code: $msg"
+    }
+}
+
+// sealed classes
+sealed class Result{
+    data object success : Result()
+    data class Failure(val code: Int, val msg: String) : Result()
+    data class Error(val message: String) : Result()
+
+}
+
+fun render(state: Result) {
+    when (state) {
+        Result.success -> println("UI: Loading...")
+        is Result.Failure -> println("UI: Success -> ${state.code}")
+        is Result.Error -> println("UI: Error -> ${state.message}")
     }
 }
