@@ -17,6 +17,14 @@ fun main(){
 
     println(person3);
 
+    Child.log("Ankit")
+    Child.log("AKM")
+
+
+    Loading.log("Ankit Kumar Mishra")
+    println(Loading.log("2200032823"))
+    println(Loading.log("21"))
+
 }
 
 data class Person(val id: Int, val name: String, val age: Int){
@@ -31,4 +39,19 @@ data class Person(val id: Int, val name: String, val age: Int){
 //    override fun toString(): String {
 //        return super.toString()
 //    }
+}
+
+data object Child{
+    fun log(name: String){
+        println("LOG: $name");
+    }
+}
+
+data object Loading{
+    fun log(name: String){
+        println("LOADING: $name");
+    }
+    fun age(age: Int){
+        println("AGE: $age");
+    }
 }
