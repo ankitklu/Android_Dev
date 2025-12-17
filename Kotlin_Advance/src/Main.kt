@@ -43,7 +43,42 @@ fun main(){
         println(state)
     }
 
+
+    // lambda functions
+    val add = { a: Int, b: Int -> a + b }
+    println(add(1,2))
+
+
+    //higher order functions
+    val sum = calculate(10, 5) { x, y -> x + y }
+    val diff = calculate(10, 5) { x, y -> x - y }
+    val product = calculate(10, 5) { x, y -> x * y }
+
+    println(sum)
+    println(diff)
+    println(product);
+
+    // filter
+    val arr = arrayOf(1,2,20,3,3,4)
+    val newArr = arr.filter { it % 2 == 0 }
+    println(newArr)
+
+    val list = listOf<Int>(1,2,23)
+    val newList = list.filter{ it%3==0}
+    println(newList)
+
+    arr.forEach{println(it)}
+
 }
+
+fun calculate(
+    a: Int,
+    b: Int,
+    operation: (Int, Int) -> Int
+): Int {
+    return operation(a, b)
+}
+
 
 data class Person(val id: Int, val name: String, val age: Int){
     override fun equals(other: Any?): Boolean {
