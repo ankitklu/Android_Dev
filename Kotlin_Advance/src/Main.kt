@@ -69,6 +69,111 @@ fun main(){
 
     arr.forEach{println(it)}
 
+    // let keyword
+    /*
+    If the declaring value is null then the let block won't execute
+    -> We use let when we deal with null possibilities
+    ->
+     */
+
+//    val name: String? = null
+    val name: String? = "Ankit"
+    var entered: Boolean = false;
+    name?.let{
+        println(it.uppercase())
+        entered= true;
+    }
+    println(entered)
+
+    //when we want to retrun something from the let scope.
+    val length = name?.let{
+        it.length
+    }
+    println(length)
+
+
+    // run keyword
+    /*
+    when we don't need the object afterward and we need to calculate something, we use run keyword.
+    It's like do some work and give me the result
+     */
+    var ar = arrayOf(1,2,20,3,3,4)
+
+    var len = ar?.run{
+        ar.set(0,999)
+        size
+    }
+    ar.forEach { print("$it, ") }
+    println()
+    println(len)
+
+    val numbers = intArrayOf(1, 2, 3, 4, 5)
+
+    val result = numbers.run {
+        println("Size = $size")
+        sum()
+    }
+
+    val sumofmaxmin = numbers.run{
+        val max = maxOrNull()?: 0;
+        val min = minOrNull()?: 0;
+        max+min
+    }
+    println(sumofmaxmin)
+    println(result) // 15
+
+    /*
+        Avoid repeating numbers, keeps the logic grouped and returns a value
+        -> we can also have a null check before implementing the run scope
+     */
+    val num: IntArray? = intArrayOf(10, 20, 30)
+
+    val average = num?.run {
+        sum().toDouble()/size
+    }
+
+    println(average)
+
+    // we can also use run for validation logic
+
+    val numArr = intArrayOf(10, 20, 31)
+    val allEven = numArr?.run{
+         all {it % 2 == 0}
+    }
+    println(allEven)
+
+
+    // can use multiple trasnforms and then applyu run keyword as well
+    val newArray = numbers.filter{it>2}.toIntArray().run{
+        sum()*size
+    }
+    println(newArray)
+
+    // apply keyword
+    val num2 = IntArray(5).apply {
+        for (i in indices) {
+            this[i] = i * 2
+        }
+    }
+
+    println(numbers.joinToString())
+
+    val numberArray = arrayOf(5, 2, 4, 3, 1)
+    val newArray2 = numberArray?.apply{
+        sort()
+    }
+    println(newArray2?.joinToString())
+
+
+    //apply keyword
+    println("-----------APPLY------------")
+    val newNumArray = arrayOf(1,2,3,4,5)
+    newNumArray.also{println("before sorting, the array was ${newNumArray.joinToString()}")}
+        .apply { sortDescending() }
+        .also{ println("after sorting the array ${newNumArray.joinToString()}") }
+
+
+
 }
 
 fun calculate(
