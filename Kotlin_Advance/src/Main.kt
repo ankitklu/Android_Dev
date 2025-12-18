@@ -172,7 +172,64 @@ fun main(){
         .apply { sortDescending() }
         .also{ println("after sorting the array ${newNumArray.joinToString()}") }
 
+    // map function in kotlin
+    var list2 = listOf(1,2,3,4,5)
+    var newList2 = list2.map{it*it}
+    println(newList2)
 
+    list2 = list2.map{it*2}
+    println(list2)
+
+
+    var list3 = listOf("ankit","om","akm","coder")
+    var l = list3.map{it.length}
+    println(l.joinToString())
+
+    val ageMap = mapOf("Ankit" to 22, "Ravi" to 16)
+
+    val newAgeMap = ageMap.map{
+        (name, age)-> "$name to ${2*age}"
+    }
+    println(newAgeMap)
+
+    val adults = ageMap.filter { (name, age) ->
+        age >= 18 && name.length ==5
+    }
+    println(adults)
+
+    //associateBy keyword
+    /*
+    -> It creates a map from a list by choosing a key or a value from the list
+    ->
+     */
+
+    data class User(val name: String, val age : Int)
+    val users = listOf(
+        User("Ankit",21),
+        User("Arpit",22)
+    )
+
+    val userMap = users.associateBy { it.name }
+    println(userMap)
+
+    val users2 = listOf(
+        User("Ankit", 22),
+        User("Ravi", 17),
+        User("Raj", 25)
+    )
+
+    val adultUserNamesById =
+        users2
+            .filter { it.age >= 18 }
+            .map { it.name }
+
+    val adultMap = users2
+        .filter{it.age >=18}
+        .associateBy { "${it.name} to ${it.age}" }
+
+    println(adultMap)
+
+    println(adultUserNamesById)
 
 }
 
