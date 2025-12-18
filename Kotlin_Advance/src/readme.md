@@ -1,3 +1,8 @@
+# What is the main difference between a thread and a coroutine ?
+- Executed within a thread
+- Coroutines are suspendable
+- They can switch their context
+
 # What is a Coroutine?
 A coroutine is a task that can pause, wait, and continue later without blocking everything else.
 ```kotlin
@@ -41,3 +46,4 @@ suspend fun fetchData() {
 
 it's like i am doing my homework,
 mummy says "stop your homework, wash the dishes and then come back."
+
