@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Strings_themes_color_dimensions" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="heading_text_style">
+        <item name="android:textColor">@color/ankit_classic</item>
+    </style>
+
+
+</resources>

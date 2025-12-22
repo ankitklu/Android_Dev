@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_margin="30dp"
+        android:background="@color/ankit_classic"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/claim_reward"
+        android:padding="@dimen/heading_padding"
+        android:gravity="center"
+        />
+
+    <TextView
+        style="@style/heading_text_style"
+        android:layout_margin="30dp"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/claim_reward"
+        android:padding="@dimen/heading_padding"
+        android:gravity="center"/>
+
+
+
+
+</LinearLayout>
