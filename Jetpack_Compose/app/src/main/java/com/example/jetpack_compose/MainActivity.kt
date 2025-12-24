@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Icon
@@ -49,35 +50,37 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
 
-    Box (
-        modifier = Modifier.size(400.dp)
-    ) {
-        Text(
-            text = "Hello $name !",
-            color = Color.Blue,
-            fontSize = 30.sp,
-            modifier = Modifier.align(Alignment.BottomEnd)
-        )
-        Text(
-            text = "Some other",
-            color = Color.Blue,
-            fontSize = 30.sp,
-        )
-    }
-
-    Image(
-        painter = painterResource(R.drawable.ic_launcher_foreground),
-        contentDescription = null,
-        modifier = Modifier.background(Color.Black)
-    )
-
-    if(name.length == 4){
-        Icon(imageVector = Icons.Default.Add, contentDescription = null)
-    }
-    Column {
-        for (i in 1..10) {
-            Icon(imageVector = Icons.Default.Add, contentDescription = null)
+//    Box (
+//        modifier = Modifier.size(400.dp)
+//    ) {
+//        Text(
+//            text = "Hello $name !",
+//            color = Color.Blue,
+//            fontSize = 30.sp,
+//            modifier = Modifier.align(Alignment.BottomEnd)
+//        )
+//        Text(
+//            text = "Some other",
+//            color = Color.Blue,
+//            fontSize = 30.sp,
+//        )
+//    }
+//
+//    Image(
+//        painter = painterResource(R.drawable.ic_launcher_foreground),
+//        contentDescription = null,
+//        modifier = Modifier.background(Color.Black)
+//    )
+//
+//    if(name.length == 4){
+//        Icon(imageVector = Icons.Default.Add, contentDescription = null)
+//    }
+    LazyColumn(modifier = Modifier.fillMaxSize()){
+        items(10)
+        {
+            i-> Icon(imageVector = Icons.Default.Add, contentDescription = null, modifier = Modifier.size(100.dp))
         }
+
     }
 
 
