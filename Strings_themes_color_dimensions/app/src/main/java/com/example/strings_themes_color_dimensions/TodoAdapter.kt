@@ -10,8 +10,7 @@ import com.example.strings_themes_color_dimensions.databinding.ItemTodoBinding
 
 class TodoAdapter(private val todos: MutableList<Todo>) : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
-    inner class TodoViewHolder(val binding: ItemTodoBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    inner class TodoViewHolder(val binding: ItemTodoBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         val binding = ItemTodoBinding.inflate(

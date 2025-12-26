@@ -1,4 +1,4 @@
-package com.example.ui_design
+package com.example.nav3_practice
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,12 +11,22 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.ui_design.ui.theme.UI_DesignTheme
+import com.example.nav3_practice.ui.theme.Nav3_PracticeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.layout)
+        enableEdgeToEdge()
+        setContent {
+            Nav3_PracticeTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Greeting(
+                        name = "Android",
+                        modifier = Modifier.padding(innerPadding)
+                    )
+                }
+            }
+        }
     }
 }
 
@@ -31,7 +41,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    UI_DesignTheme {
+    Nav3_PracticeTheme {
         Greeting("Android")
     }
 }
