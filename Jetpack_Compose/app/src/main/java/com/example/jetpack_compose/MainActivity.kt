@@ -91,8 +91,8 @@ class MainActivity : ComponentActivity() {
                     LazyColumn(
                         modifier = Modifier.padding(16.dp)
                     ) {
-                        items(names) { currentName ->
-                            Text(
+                        items(names) {
+                            currentName -> Text(
                                 text = currentName,
                                 fontSize = 20.sp,
                                 modifier = Modifier.padding(4.dp).padding(5.dp)
