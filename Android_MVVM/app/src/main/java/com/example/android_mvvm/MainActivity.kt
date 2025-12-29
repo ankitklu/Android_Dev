@@ -1,73 +1,55 @@
 package com.example.android_mvvm
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.foundation.layout.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.android_mvvm.ui.theme.Android_MVVMTheme
+import com.example.android_mvvm.MainViewModel
+import com.example.android_mvvm.UiState
+import androidx.compose.runtime.collectAsState
+
 
 class MainActivity : ComponentActivity() {
 
+    private val TAG = "Ankit"
 
-    // this is necessary because in Android A resolution change is considered a configuration change
-    // which will create the instance of ContactViewModel again.
-    // to prevent this we code it as private val viewModel by viewModels<ContactViewModel>();
+    private val viewModel: MainViewModel by viewModels() // android will provide the viewModel instance that will handle ifecycle safety and survives config changes
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        Log.d(TAG,"Line 24, After onCreate")
         setContent {
+            val state = viewModel.uiState.collectAsState() // collectAsState() -> converts it into Compose-friendly state
+            Log.d(TAG,"Line 27, viewModel collectAsState()")
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                when (val ui = state.value) {
 
-            val viewModel = viewModel<ContactViewModel>()
-            // this is the compose way of using viewModel
-            // we write this in the build.gradle file
-            // implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+                    is UiState.Loading -> {
+                        CircularProgressIndicator()
+                        Log.d(TAG,"Line 36 Load bar shown")
+                    }
 
-            Android_MVVMTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = viewModel.backgroundColor
-                ) {
-                    Button(
-                        modifier = Modifier.width(13.dp),
-                        onClick = {viewModel.changeBackgroundColor()}
-                    ) {
-                        Text("Click to change color")
+                    is UiState.Success -> {
+                        Text(text = ui.data)
+                        Log.d(TAG,"Line 41, Success data")
+                    }
+
+                    is UiState.Error -> {
+                        Text(text = ui.message)
+                        Log.d(TAG,"Line 46, Error loading the data")
                     }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Android_MVVMTheme {
-        Greeting("Android")
     }
 }
