@@ -19,11 +19,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.android_mvvm.ui.theme.Android_MVVMTheme
 
 class MainActivity : ComponentActivity() {
 
-    private val viewModel by viewModels<ContactViewModel>();
+
     // this is necessary because in Android A resolution change is considered a configuration change
     // which will create the instance of ContactViewModel again.
     // to prevent this we code it as private val viewModel by viewModels<ContactViewModel>();
@@ -32,6 +33,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+
+            val viewModel = viewModel<ContactViewModel>()
+            // this is the compose way of using viewModel
+            // we write this in the build.gradle file
+            // implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+
             Android_MVVMTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
