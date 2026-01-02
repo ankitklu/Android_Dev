@@ -1,91 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_vertical"
-    tools:context=".UploadActivity">
+    android:background="#6DAF6B">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="300dp"
-        android:layout_gravity="center_horizontal"
-        android:padding="20dp">
+        android:gravity="center_horizontal">
 
-        <!-- Owner Name -->
-        <EditText
-            android:id="@+id/uploadOwnerName"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/lavender_border"
-            android:layout_marginTop="20dp"
-            android:padding="16dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:hint="Owner Name"
-            android:gravity="start|center_vertical"
-            android:textColor="@color/lavender"/>
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vehicle\nInformation!"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginTop="60dp" />
 
-        <!-- Vehicle Brand -->
-        <EditText
-            android:id="@+id/uploadVehicleBrand"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/lavender_border"
-            android:layout_marginTop="20dp"
-            android:padding="16dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:hint="Vehicle Brand"
-            android:gravity="start|center_vertical"
-            android:textColor="@color/lavender"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin Panel"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginTop="6dp" />
 
-        <!-- Vehicle RTO -->
-        <EditText
-            android:id="@+id/uploadVehicleRTO"
+        <!-- Card -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/lavender_border"
-            android:layout_marginTop="20dp"
-            android:padding="16dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:hint="Vehicle RTO"
-            android:gravity="start|center_vertical"
-            android:textColor="@color/lavender"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            android:background="#FFF8E8"
+            android:elevation="6dp"
+            android:padding="20dp"
+            android:gravity="center">
 
-        <!-- Vehicle Number -->
-        <EditText
-            android:id="@+id/uploadVehicleNumber"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/lavender_border"
-            android:layout_marginTop="20dp"
-            android:padding="16dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:hint="Vehicle Number"
-            android:gravity="start|center_vertical"
-            android:textColor="@color/lavender"/>
+            <EditText
+                android:id="@+id/uploadOwnerName"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/lavender_border"
+                android:hint="Owner Name"
+                android:textColor="#6DAF6B"
+                android:padding="16dp"
+                android:layout_marginTop="10dp" />
 
-        <!-- Save Button -->
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="Save"
-            android:textSize="18sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:backgroundTint="@color/lavender"
-            app:cornerRadius="20dp"/>
+            <EditText
+                android:id="@+id/uploadVehicleBrand"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/lavender_border"
+                android:hint="Vehicle Brand"
+                android:textColor="#6DAF6B"
+                android:padding="16dp"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/uploadVehicleRTO"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/lavender_border"
+                android:hint="Vehicle RTO"
+                android:textColor="#6DAF6B"
+                android:padding="16dp"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/uploadVehicleNumber"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/lavender_border"
+                android:hint="Vehicle Number"
+                android:textColor="#6DAF6B"
+                android:padding="16dp"
+                android:layout_marginTop="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Save"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_marginTop="22dp"
+                android:backgroundTint="#6DAF6B"
+                app:cornerRadius="25dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
