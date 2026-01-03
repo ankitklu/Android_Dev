@@ -1,5 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+    <style name="Base.Theme.CRUD_Realtime_Client" parent="Theme.Material3.DayNight.NoActionBar"/>
     <style name="Theme.CRUDKotPractice" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/lavender</item>
@@ -13,4 +14,5 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="Theme.CRUD_Realtime_Client" parent="Base.Theme.CRUD_Realtime_Client" />
 </resources>
