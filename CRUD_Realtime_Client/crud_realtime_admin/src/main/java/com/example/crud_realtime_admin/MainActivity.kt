@@ -31,5 +31,11 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.mainDelete.setOnClickListener {
+            val intent = Intent(this@MainActivity, DeleteActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 }
