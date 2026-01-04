@@ -5,11 +5,28 @@
     android:layout_height="match_parent"
     android:background="#6DAF6B">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/backButton"
+            android:layout_width="77dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:text="Back"
+            android:textSize="20dp"
+            android:tint="@color/lavender" />
 
         <!-- Header -->
         <TextView

@@ -1,6 +1,8 @@
 package com.example.crud_realtime_admin
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +23,14 @@ class DeleteActivity : AppCompatActivity() {
         binding= ActivityDeleteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backButton.setOnClickListener {
+            Log.d("ankitcoder","back button is clicked")
+            binding.backButton.text = "Going Back.."
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         binding.deleteVehicleNumber.setOnClickListener {
             val vehicleNumber = binding.deleteVehicleNumber.text.toString()
             if(vehicleNumber.isNotEmpty()){
@@ -30,6 +40,7 @@ class DeleteActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter the vehicle number", Toast.LENGTH_SHORT).show()
             }
         }
+
 
     }
     private fun deleteData(vehicleNumber: String){

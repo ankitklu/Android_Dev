@@ -21,6 +21,12 @@ class UploadActivity : AppCompatActivity() {
         binding = ActivityUploadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         binding.saveButton.setOnClickListener {
             val ownerName = binding.uploadOwnerName.text.toString()
             val vehicleBrand = binding.uploadVehicleBrand.text.toString()
