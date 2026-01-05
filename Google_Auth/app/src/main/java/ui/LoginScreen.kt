@@ -42,7 +42,7 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
         Button(onClick = {
             launcher.launch(googleAuthClient.signInClient.signInIntent)
         }) {
-            Text("Sign in with Google")
+            Text("Sign in with Google..")
         }
     }
 }
